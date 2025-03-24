@@ -1,28 +1,53 @@
+import { useEffect, useState } from "react";
 import React from "react";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
 
 //create your first component
 const Home = () => {
+	const [color, setColor] = useState("red");
+	
+	const cycleLight=()=>{
+		if (color==="red"){
+			setColor("yellow");
+		}
+		else if (color==="yellow"){
+			setColor("green");
+		}
+		else if (color==="green"){
+			setColor("red");
+		}
+	}
 	return (
-		<div className="text-center">
-            
-
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
-	);
+	<div className="traffic-light">	
+		<div
+			className={`light-div red ${color==="red" ? "active":""}`}
+			onClick={()=>setColor("red")}
+		></div>
+		<div
+			className={`light-div yellow ${color==="yellow" ? "active":""}`}
+			onClick = {()=> setColor("yellow")}
+		></div >
+		<div
+			className={`light-div green ${color === "green" ? "active" : ""}`}
+			onClick={() => setColor("green")}
+		></div>
+		<button className="cycle-button" onClick={cycleLight}></button>
+		<p className="button-description-1">Click this to cycle the colors</p>
+		
+	</div >
+	
+	)
 };
 
 export default Home;
+
+
+
+// useEffect(()=>{
+
+// }, []);
+// return (
+// 	<div className="text-center">
+
+// 	</div>
+// );

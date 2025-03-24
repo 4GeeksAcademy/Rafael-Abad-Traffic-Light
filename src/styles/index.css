@@ -9,3 +9,35 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+.light-div{
+    height:100px;
+    width:100px;
+    border-radius: 50%;
+    background-color: gray;
+    margin-bottom:10px;
+}
+.traffic-light{
+    height: 100%;
+    width:8%;
+    background-color: black
+}
+.active{
+    box-shadow:orange 0 0 5px 25px;
+}
+.red{
+    background-color: red;
+}
+.green{
+    background-color: green;
+}
+.yellow{
+    background-color: yellow;
+}
+.cycle-button{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+}
+.button-description{
+    color:white;
+}
